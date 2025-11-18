@@ -1,11 +1,9 @@
-﻿using API.P.Movies.DAL;
-using API.P.Movies.DAL.Models;
-using API.P.Movies.Repository.IRepository;
+﻿using APIW.Movies.Repository.IRepository;
 using APIW.Movies.DAL;
 using APIW.Movies.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.P.Movies.Repository
+namespace APIW.Movies.Repository
 {
     public class CategoryRepository : ICategoryRepository
     {
