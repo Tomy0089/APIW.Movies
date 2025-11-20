@@ -84,6 +84,7 @@ namespace APIW.Movies.Controllers
             try
             {
                 var updatedCategory = await _categoryService.UpdateCategoryAsync(dto, id);
+
                 return Ok(updatedCategory);
             }
             catch (InvalidOperationException ex) when (ex.Message.Contains("Ya existe"))
