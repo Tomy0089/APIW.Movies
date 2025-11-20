@@ -7,7 +7,7 @@ namespace APIW.Movies.DAL.Models
         [Required] //Este data annotation indica que el campo es obligatorio
         [Display(Name="Nombre de la categoria")] //personaliza el nombre que se muestra en las vistas
         public string Name { get; set; }
-
+        public DateTime CreatedDate { get; internal set; }
     }
 }
 

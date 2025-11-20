@@ -1,6 +1,6 @@
-﻿using APIW.Movies.Repository.IRepository;
-using APIW.Movies.DAL;
+﻿using APIW.Movies.DAL;
 using APIW.Movies.DAL.Models;
+using APIW.Movies.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace APIW.Movies.Repository
@@ -61,9 +61,11 @@ namespace APIW.Movies.Repository
 
         public async Task<Category> GetCategoryAsync(int id)
         {
-            return await _context.Categories
+            var category = await _context.Categories
                 .AsNoTracking()
                 .FirstOrDefaultAsync(c => c.Id == id);
+
+            return category;
         }
 
         public async Task<bool> UpdateCategoryAsync(Category category)
