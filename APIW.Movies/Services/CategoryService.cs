@@ -104,7 +104,7 @@ namespace APIW.Movies.Services
 
             if (existingCategory == null)
             {
-                throw new InvalidOperationException($"No se encontró la categoría con Id {id}");
+                throw new KeyNotFoundException($"No se encontró la categoría con Id {id}");
             }
 
             //Borrar la categoría en la base de datos
