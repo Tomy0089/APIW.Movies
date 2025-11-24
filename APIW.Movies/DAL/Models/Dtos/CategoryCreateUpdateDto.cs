@@ -1,14 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
-using Microsoft.OpenApi.MicrosoftExtensions;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace APIW.Movies.DAL.Models.Dtos
 {
     public class CategoryCreateUpdateDto
     {
-        [Required(ErrorMessage = "El nombre es obligatorio")]
-        [MaxLength(100, ErrorMessage = "El número máximo de carácteres es de 100.")]
-
-        public String Name { get; set; }
+        [Required(ErrorMessage = "El nombre de la categoría es obligatorio.")]
+        [MaxLength(100, ErrorMessage = "El número máximo de caracteres es de 100.")]
+        public string Name { get; set; }
     }
 }
