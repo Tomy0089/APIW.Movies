@@ -23,6 +23,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Repositorios
+builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+
+// Servicios
+builder.Services.AddScoped<IMovieService, MovieService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
