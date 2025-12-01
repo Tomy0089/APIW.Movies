@@ -18,7 +18,7 @@ namespace APIW.Movies.Models
         public int Duration { get; set; }
 
         [Required]
-        public string Classification { get; set; } // Ej: PG-13
+        public string Classification { get; set; } 
 
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }

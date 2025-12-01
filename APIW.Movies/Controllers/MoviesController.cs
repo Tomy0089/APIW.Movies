@@ -73,21 +73,16 @@ namespace APIW.Movies.Controllers
                 return BadRequest(ModelState);
             }
 
-            // 1. Buscamos la película existente (Queda "trackeada" por EF Core)
             var existingMovie = await _movieService.GetMovieAsync(id);
 
             if (existingMovie == null)
             {
                 return NotFound();
             }
-
-            // 2. CORRECCIÓN: En vez de crear uno nuevo, volcamos los datos del DTO sobre el existente
+            
             _mapper.Map(movieDto, existingMovie);
 
-            // Nota: Ya no necesitamos copiar CreatedDate manualmente porque
-            // existingMovie ya lo tiene y el mapeo lo respeta.
-
-            // 3. Mandamos a guardar el mismo objeto que ya recuperamos
+                   
             if (!await _movieService.UpdateMovieAsync(existingMovie))
             {
                 ModelState.AddModelError("", $"Algo salió mal actualizando el registro {existingMovie.Name}");
